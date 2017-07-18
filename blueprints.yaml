@@ -1,0 +1,27 @@
+name: Story
+version: 0.1.1
+description: "Story theme by html5up "
+icon: empire
+author:
+  name: Paul Massendari
+  email: paul@massendari.com
+  url: https://paulmassendari.com
+homepage: https://github.com/paulmassen/grav-theme-story
+demo: http://demo.getgrav.org/story
+keywords: story, theme, portfolio, html5, css3
+bugs: https://github.com/paulmassen/grav-theme-story/issues
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

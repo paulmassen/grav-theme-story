@@ -1,0 +1,30 @@
+title: Portfolio
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+              header.portfolio:
+                type: list
+                label: Portfolio
+                fields:
+                  .projectimg:
+                    type: filepicker
+                    label: Project image
+                    preview_images: true
+                  .project_title:
+                    type: text
+                    label: Project title
+                  .project_description:
+                    type: textarea
+                    label: Project Description
+              header.displaystyle:
+                type: display
+                test:
+                size: large
+                label: Instructions
+                markdown: true
+                content: "This is a test ![](user/themes/story/images/pic02.jpg) ![](user/themes/story/images/pic03.jpg) ![](user/themes/story/images/pic01.jpg) of **bold** and _italic_ in a text/display field\n\nanother paragraph...."

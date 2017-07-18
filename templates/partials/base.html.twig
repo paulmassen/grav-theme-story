@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Story by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% do assets.addCss('theme://css/main.css') %}
+        {{ assets.css() }}
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+                {% block content %}
+                {% endblock %}
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			{% do assets.addJs('theme://js/jquery.min.js', 120) %}
+			{% do assets.addJs('theme://js/jquery.scrollex.min.js', 119) %}
+			{% do assets.addJs('theme://js/jquery.scrolly.min.js', 118) %}
+			{% do assets.addJs('theme://js/skel.min.js', 117) %}
+			{% do assets.addJs('theme://js/util.js', 116) %}
+			{% do assets.addJs('theme://js/main.js', 115) %}
+            {{ assets.js() }}
+
+	</body>
+</html>

@@ -1,0 +1,22 @@
+title: Icons
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+              header.icons:
+                type: list
+                label: Icons
+                fields:
+                  .icons:
+                    type: text
+                    label: Icons
+                  .headline:
+                    type: text
+                    label: Icon headline
+                  .icontext:
+                    type: textarea
+                    label: Icon Text
