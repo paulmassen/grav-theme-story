@@ -1,6 +1,6 @@
 name: Story
 version: 0.1.1
-description: "Story theme by html5up "
+description: "Story theme by html5up for Grav CMS"
 icon: empire
 author:
   name: Paul Massendari
@@ -15,13 +15,19 @@ license: MIT
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in navbar
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+    footer.text:
+      type: text
+      label: Footer Text
+    footer.icon:
+      type: list
+      label: Footer Icons
+      fields:
+        .name:
+          type: text
+          label: icon name
+        .link:
+          type: text
+          label: link
+        .title:
+          type: text
+          label: icon title
