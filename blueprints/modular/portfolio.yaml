@@ -21,10 +21,4 @@ form:
                   .project_description:
                     type: textarea
                     label: Project Description
-              header.displaystyle:
-                type: display
-                test:
-                size: large
-                label: Instructions
-                markdown: true
-                content: "This is a test ![](user/themes/story/images/pic02.jpg) ![](user/themes/story/images/pic03.jpg) ![](user/themes/story/images/pic01.jpg) of **bold** and _italic_ in a text/display field\n\nanother paragraph...."
+             
