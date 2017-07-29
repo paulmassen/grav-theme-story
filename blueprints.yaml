@@ -1,5 +1,5 @@
 name: Story
-version: 0.1.1
+version: 0.1.2
 description: "Story theme by html5up for Grav CMS"
 icon: empire
 author:
@@ -7,7 +7,7 @@ author:
   email: paul@massendari.com
   url: https://paulmassendari.com
 homepage: https://github.com/paulmassen/grav-theme-story
-demo: http://demo.getgrav.org/story
+demo: http://story.paulmassendari.com
 keywords: story, theme, portfolio, html5, css3
 bugs: https://github.com/paulmassen/grav-theme-story/issues
 license: MIT
