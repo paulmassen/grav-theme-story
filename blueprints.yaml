@@ -23,11 +23,11 @@ form:
       label: Footer Icons
       fields:
         .name:
-          type: text
-          label: icon name
+          type: iconpicker
+          label: pick icon
         .link:
           type: text
           label: link
         .title:
           type: text
-          label: icon title
+          label: icon name
