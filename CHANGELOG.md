@@ -1,3 +1,10 @@
+# v1.0
+## 01/15/2017
+
+1. [](#new)
+    * Color selection
+    * Pagination fix
+
 # v0.1.2
 ## 07/29/2017
 
