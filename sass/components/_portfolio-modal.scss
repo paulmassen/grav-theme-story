@@ -54,6 +54,11 @@
                     .image,
                     .project-description {
                         width: 100%;
+                        border-radius: 0;
+                    }
+                    .project-description {
+                        padding: 1rem;
+                        text-align: left;
                     }
                     .modal-footer {
                         display: block;
@@ -61,6 +66,7 @@
                     }
                     img {
                         width: 100%;
+                        border-radius: 0;
                     }
                 }
             }

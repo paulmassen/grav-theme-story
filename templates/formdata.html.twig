@@ -1,0 +1,14 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+<section class="wrapper style1 align-center">
+	<div class="inner medium">
+		<h2>{{page.title}}</h2>
+		{{ content }}
+			{% include "forms/data.html.twig" %}
+	</div>
+</section>
+
+
+{% endblock %}

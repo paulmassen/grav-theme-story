@@ -1,4 +1,4 @@
-title: Portfolio
+title: Landing
 '@extends': default
 
 form:
@@ -7,8 +7,8 @@ form:
       fields:
         content:
           fields:
-              header.spotlight_img:
+              header.bannerrimg:
                 type: filepicker
                 preview_images: true
-                label: Spotlight Image
+                label: Landing Image
              
