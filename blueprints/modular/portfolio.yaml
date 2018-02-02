@@ -21,4 +21,22 @@ form:
                   .project_description:
                     type: textarea
                     label: Project Description
-             
+                  .project_id:
+                    type: number
+                    label: Project id to be used in the modal (unique number)
+                  .project_link:
+                    type: text
+                    label: The link to the actual project
+                  .project_client:
+                    type: text
+                    label: The Client's name / Project's name
+                  .project_date:
+                    type: date
+                    label: When was the project released 
+                  .project_work:
+                    classes: fancy
+                    type: selectize
+                    label: Type of work done separated with the Tab key/ comma
+                    classes: fancy
+                    validate:
+                        type: commalist
