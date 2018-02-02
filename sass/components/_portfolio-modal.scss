@@ -1,0 +1,98 @@
+            // Modal Window
+            .portfolio-modal .close-modal {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 5rem;
+                height: 5rem;
+                background-color: transparent;
+                cursor: pointer;
+                font-size: 2rem;
+                font-weight: 400;
+            }
+
+            .modal {
+                display: none;
+                opacity: 0;
+                overflow: auto;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1050;
+                -webkit-overflow-scrolling: touch;
+                outline: 0;
+                background: white;
+                text-align: center;
+                &.in {
+                    opacity: 1;
+                }
+                .client-details {
+                    list-style-type: none;
+                    li {
+                        display: inline-block;
+                        strong {
+                            color: green;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .modal-content {
+                    margin: 0 auto;
+                    width: 80%;
+                    margin-top: 5rem;
+                    justify-content: center;
+                    display: inline-flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    .modal-body {
+                        display: inline-flex;
+                        flex-flow: row wrap;
+                        align-items: center;
+                    }
+                    .image,
+                    .project-description {
+                        width: 100%;
+                    }
+                    .modal-footer {
+                        display: block;
+                        width: 100%;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            @include skel-breakpoints(small) {
+                .modal-content {
+                    .image,
+                    .project-description {
+                        width: 50%;
+                    }
+                }
+            }
+
+            @include skel-breakpoints(medium) {
+                .modal-content {
+                    width: 60%;
+                    margin-top: 2.5rem;
+                    .image,
+                    .project-description {
+                        width: 50%;
+                    }
+                }
+            }
+
+            @include skel-breakpoints(large) {
+                .modal-content {
+                    width: 60%;
+                    .image {
+                        width: 40%;
+                    }
+                    .project-description {
+                        width: 60%;
+                    }
+                }
+            }

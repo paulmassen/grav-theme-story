@@ -1,27 +1,63 @@
-	<!-- Five -->
-					<section class="wrapper style1 align-center">
-						<div class="inner">
-							<h2>{{page.title}}</h2>
-							{{page.content}}
-						</div>
+<!-- Five -->
+<section class="wrapper style1 align-center">
+	<div class="inner">
+		<h2>{{page.title}}</h2>
+		{{page.content}}
+	</div>
 
-						<!-- Gallery -->
-							<div class="gallery style2 medium lightbox onscroll-fade-in">
-                                {% for item in page.header.portfolio %}
-								<article>
-                                  
-                                        {{ page.media[item.projectimg].lightbox(1000,1000).cropZoom(360,250).html('Portfolio Image', 'Portfolio project','image') }}
+	<!-- Gallery -->
+	<div class="gallery style2 medium lightbox onscroll-fade-in">
+		{% for item in page.header.portfolio %}
+		<article>
+				{{ page.media[item.projectimg].cropZoom(360,250).html('Portfolio Image', 'Portfolio project','image') }}
+			<div class="caption">
+				<h3>{{ item.project_title }}</h3>
+				<p>{{ item.project_description|truncate(50) }}</p>
+				<ul class="actions">
+					<li><a href='#portfolioModal{{ item.project_id }}' class="button small" data-toggle="modal">Details</a></li>
+				</ul>
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+</section>
 
-									
-									<div class="caption">
-                                        <h3>{{ item.project_title }}</h3>
-                                        <p>{{ item.project_description }}</p>
-										<ul class="actions">
-											<li><span class="button small">Details</span></li>
-										</ul>
-									</div>
-								</article>
-                                {% endfor %}
-							</div>
-
-					</section>
+{% for item in page.header.portfolio %}
+    <div class="portfolio-modal modal" id="portfolioModal{{ item.project_id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal"><i class="fa fa-times"></i></div>
+            <div class="modal-body">
+                <div class="image">
+					<img src="{{ page.media[item.projectimg].url }}" class="img-responsive img-centered" alt="{{ item.project_title }}"/>
+				</div>
+				<div class="project-description">
+                	<h1>{{ item.project_title }}</h1>
+					<p>{{ item.project_description }}</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+					<ul class="client-details">
+						<li>Client:
+							<strong>
+								<a class='client-link' href="{{ item.project_link }}" target='_blank' rel='noopener'>{{ item.project_client }}</a>
+							</strong>
+						</li>
+						<li>Date:
+							<strong class='project-published-date'>
+								{{ item.project_date }}
+							</strong>
+						</li>
+						<li>Service:
+							{% for categ in item.project_work %}
+							<strong class='project-label'> 
+								{{ categ }}  &nbsp;
+							</strong> 
+							{% endfor %}
+						</li>
+					</ul>
+					<button type="button" class="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
