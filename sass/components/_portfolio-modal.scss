@@ -1,104 +1,156 @@
-            // Modal Window
-            .portfolio-modal .close-modal {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 5rem;
-                height: 5rem;
-                background-color: transparent;
-                cursor: pointer;
-                font-size: 2rem;
-                font-weight: 400;
-            }
+// Modal Window
+.portfolio-modal .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 400;
+}
 
-            .modal {
-                display: none;
-                opacity: 0;
-                overflow: auto;
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1050;
-                -webkit-overflow-scrolling: touch;
-                outline: 0;
-                background: white;
-                text-align: center;
-                &.in {
-                    opacity: 1;
-                }
-                .client-details {
-                    list-style-type: none;
-                    li {
-                        display: inline-block;
-                        strong {
-                            color: green;
-                            font-weight: normal;
-                        }
-                    }
-                }
-                .modal-content {
-                    margin: 0 auto;
-                    width: 80%;
-                    margin-top: 5rem;
-                    justify-content: center;
-                    display: inline-flex;
-                    flex-flow: row wrap;
-                    align-items: center;
-                    .modal-body {
-                        display: inline-flex;
-                        flex-flow: row wrap;
-                        align-items: center;
-                    }
-                    .image,
-                    .project-description {
-                        width: 100%;
-                        border-radius: 0;
-                    }
-                    .project-description {
-                        padding: 1rem;
-                        text-align: left;
-                    }
-                    .modal-footer {
-                        display: block;
-                        width: 100%;
-                    }
-                    img {
-                        width: 100%;
-                        border-radius: 0;
-                    }
-                }
+.modal {
+    display: none;
+    opacity: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background: white;
+    text-align: center;
+    &.in {
+        opacity: 1;
+    }
+    .client-details {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            strong {
+                color: green;
+                font-weight: normal;
             }
+        }
+    }
+}
 
-            @include skel-breakpoints(small) {
-                .modal-content {
-                    .image,
-                    .project-description {
-                        width: 50%;
-                    }
-                }
-            }
+.modal-content {
+    margin: 0 auto;
+    margin-top: 5rem;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    .modal-body {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding-bottom: 1rem;
+        width: 95%;
+    }
+    .image {
+        height: 45vh;
+    }
+    .image,
+    .project-description {
+        width: 50%;
+        border-radius: 0;
+    }
+    .project-description {
+        padding: 1rem;
+        text-align: left;
+    }
+    .modal-footer {
+        display: block;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+    img {
+        width: 100%;
+        border-radius: 0;
+    }
+}
 
-            @include skel-breakpoints(medium) {
-                .modal-content {
-                    width: 60%;
-                    margin-top: 2.5rem;
-                    .image,
-                    .project-description {
-                        width: 50%;
-                    }
-                }
-            }
+@include breakpoint(xlarge) {
+    .modal-content {
+        .modal-body {
+            width: 80%;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+        .image {
+            width: 50%;
+            height: 35rem;
+        }
+        .project-description {
+            width: 50%;
+            padding-left: 1rem;
+        }
+    }
+}
 
-            @include skel-breakpoints(large) {
-                .modal-content {
-                    width: 60%;
-                    .image {
-                        width: 40%;
-                    }
-                    .project-description {
-                        width: 60%;
-                    }
-                }
-            }
+@include breakpoint(large) {
+    .modal-content {
+        .modal-body {
+            width: 80%;
+        }
+        .image {
+            width: 50%;
+            height: 30rem;
+        }
+        .project-description {
+            width: 50%;
+        }
+    }
+}
+
+@include breakpoint(medium) {
+    .modal-content {
+        .modal-body {
+            margin-top: 0;
+        }
+        .image {
+            width: 50%;
+            height: 25rem;
+        }
+        .project-description {
+            width: 50%;
+            padding-left: 1rem;
+        }
+    }
+}
+
+@include breakpoint(small) {
+    .modal-content {
+        .modal-body {
+            margin-top: 0;
+        }
+        .image {
+            width: 90%;
+            height: 20rem;
+        }
+        .project-description {
+            width: 90%;
+            padding-left: 0;
+        }
+    }
+}
+
+@include breakpoint(xsmall) {
+    .modal-content {
+        .image {
+            width: 95%;
+        }
+        .project-description {
+            width: 95%;
+        }
+    }
+}
