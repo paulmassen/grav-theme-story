@@ -75,7 +75,8 @@ label {
     display: block;
     font-size: 0.9rem;
     font-weight: _font(weight-bold);
-    margin: 0 0 (_size(element-margin) * 0.5) 0;
+    margin: (_size(element-margin) * 0.5) 0 0 0;
+    text-align: left;
 }
 
 input[type="text"],
@@ -135,6 +136,9 @@ select {
 
 textarea {
     padding: 0.75rem 1rem;
+    resize: none;
+    height: 150px;
+    margin-bottom: 2rem;
 }
 
 input[type="checkbox"],

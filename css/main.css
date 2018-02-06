@@ -1374,7 +1374,8 @@ label {
   display: block;
   font-size: 0.9rem;
   font-weight: 400;
-  margin: 0 0 1rem 0; }
+  margin: 1rem 0 0 0;
+  text-align: left; }
 
 input[type="text"],
 input[type="password"],
@@ -1444,7 +1445,10 @@ select {
   height: 2.75rem; }
 
 textarea {
-  padding: 0.75rem 1rem; }
+  padding: 0.75rem 1rem;
+  resize: none;
+  height: 150px;
+  margin-bottom: 2rem; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -5367,16 +5371,18 @@ body.is-loading .items.onload-fade-in > * > .inner {
   .modal.in {
     opacity: 1; }
   .modal .client-details {
-    list-style-type: none; }
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0; }
     .modal .client-details li {
-      display: inline-block; }
+      display: block;
+      padding-left: 0; }
       .modal .client-details li strong {
         color: green;
         font-weight: normal; }
 
 .modal-content {
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 3rem auto 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -5404,7 +5410,7 @@ body.is-loading .items.onload-fade-in > * > .inner {
     padding-bottom: 1rem;
     width: 95%; }
   .modal-content .image {
-    height: 45vh; }
+    height: 25rem; }
   .modal-content .image,
   .modal-content .project-description {
     width: 50%;
@@ -5413,8 +5419,20 @@ body.is-loading .items.onload-fade-in > * > .inner {
     padding: 1rem;
     text-align: left; }
   .modal-content .modal-footer {
-    display: block;
-    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 95%;
     padding-bottom: 2rem; }
   .modal-content img {
     width: 100%;
@@ -5433,7 +5451,9 @@ body.is-loading .items.onload-fade-in > * > .inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 5rem; }
+    margin-top: 3rem; }
+  .modal-content .modal-footer {
+    width: 80%; }
   .modal-content .image {
     width: 50%;
     height: 35rem; }
@@ -5442,37 +5462,46 @@ body.is-loading .items.onload-fade-in > * > .inner {
     padding-left: 1rem; } }
 
 @media screen and (max-width: 1280px) {
-  .modal-content .modal-body {
-    width: 80%; }
-  .modal-content .image {
-    width: 50%;
-    height: 30rem; }
-  .modal-content .project-description {
-    width: 50%; } }
+  .modal-content {
+    margin-top: 3rem; }
+    .modal-content .image {
+      height: 30rem; } }
 
 @media screen and (max-width: 980px) {
-  .modal-content .modal-body {
-    margin-top: 0; }
-  .modal-content .image {
-    width: 50%;
-    height: 25rem; }
-  .modal-content .project-description {
-    width: 50%;
-    padding-left: 1rem; } }
+  .modal-content {
+    margin-top: 5rem; }
+    .modal-content .modal-body {
+      margin-top: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+              flex-flow: column nowrap; }
+    .modal-content .image,
+    .modal-content .project-description {
+      width: 100%; }
+    .modal-content .image {
+      height: 25rem; }
+    .modal-content .project-description {
+      padding-left: 1rem; } }
 
 @media screen and (max-width: 736px) {
   .modal-content .modal-body {
-    margin-top: 0; }
+    margin-top: 0;
+    width: 95%; }
+  .modal-content .modal-footer {
+    width: 95%; }
   .modal-content .image {
     width: 90%;
     height: 20rem; }
   .modal-content .project-description {
     width: 90%;
-    padding-left: 0; } }
+    padding-left: 0; }
+  .modal-content .client-details {
+    width: 90%; } }
 
 @media screen and (max-width: 480px) {
-  .modal-content .image {
-    width: 95%; }
+  .modal-content .image,
+  .modal-content .client-details,
   .modal-content .project-description {
     width: 95%; } }
 

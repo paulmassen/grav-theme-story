@@ -1,74 +1,78 @@
 <!-- Five -->
 <section class="wrapper style1 align-center">
-	<div class="inner">
-		<h2>{{page.title}}</h2>
-		{{page.content}}
-	</div>
+  <div class="inner">
+    <h2>{{page.title}}</h2>
+    {{page.content}}
+  </div>
 
-	<!-- Gallery -->
-	<div class="gallery style2 medium lightbox onscroll-fade-in">
-		{% for item in page.header.portfolio %}
-		<article>
-				{{ page.media[item.project_img].cropZoom(360,250).html('Portfolio Image', 'Portfolio project','image') }}
-			<div class="caption">
-				<h3>{{ item.project_title }}</h3>
-				<p>{{ item.project_description|truncate(50) }}</p>
-				<ul class="actions">
-					<li><a href='#portfolioModal{{ item.project_id }}' class="button small" data-toggle="modal">Details</a></li>
-				</ul>
-			</div>
-		</article>
-		{% endfor %}
-	</div>
+  <!-- Gallery -->
+  <div class="gallery style2 medium lightbox onscroll-fade-in">
+    {% for item in page.header.portfolio %}
+      <article>
+        {{ page.media[item.project_img].cropZoom(360,250).html('Portfolio Image', 'Portfolio project','image') }}
+        <div class="caption">
+          <h3>{{ item.project_title }}</h3>
+          <!-- <p>{{ item.project_description|truncate(50) }}</p> -->
+          <ul class="actions">
+            <li>
+              <a href='#portfolioModal{{ item.project_id }}' class="button small" data-toggle="modal">Details</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
 </section>
 
 {% for item in page.header.portfolio %}
-    <div class="portfolio-modal modal" id="portfolioModal{{ item.project_id }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-				<?xml version="1.0" encoding="utf-8"?>
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-				<style type="text/css">
-					<![CDATA[
-						.st0{fill:#010101;}
-					]]>
-					</style>
-					<polygon class="st0" points="340.2,160 255.8,244.3 171.8,160.4 160,172.2 244,256 160,339.9 171.8,351.6 255.8,267.8 340.2,352 
-						352,340.3 267.6,256 352,171.8 "/>
-					</svg>
-
-			</div>
-            <div class="modal-body">
-                <div class="image" style="background: url('{{ page.media[item.project_img].url }}') center center no-repeat; background-size: cover;" >
-				</div>
-				<div class="project-description">
-                	<h2 class='align-center'>{{ item.project_title }}</h2>
-					<p>{{ item.project_description }}</p>
-				</div>
-			</div>
-			<div class="modal-footer">
-					<ul class="client-details">
-						<li>Client:
-							<strong>
-								<a class='client-link' href="{{ item.project_link }}" target='_blank' rel='noopener'>{{ item.project_client }}</a>
-							</strong>
-						</li>
-						<li>Date:
-							<strong class='project-published-date'>
-								{{ item.project_date }}
-							</strong>
-						</li>
-						<li>Service:
-							{% for categ in item.project_work %}
-							<strong class='project-label'> 
-								{{ categ }}  &nbsp;
-							</strong> 
-							{% endfor %}
-						</li>
-					</ul>
-					<button type="button" class="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-				</div>
-            </div>
+  <div class="portfolio-modal modal" id="portfolioModal{{ item.project_id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="45px" height="45px" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <style type="text/css">
+             /* <![CDATA[ */
+            .st0 {
+              fill: #010101;
+            }
+            /* ]]> */
+          </style>
+          <polygon class="st0" points="340.2,160 255.8,244.3 171.8,160.4 160,172.2 244,256 160,339.9 171.8,351.6 255.8,267.8 340.2,352
+      						352,340.3 267.6,256 352,171.8"/>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <div class="image" style="background: url('{{ page.media[item.project_img].url }}') center center no-repeat; background-size: cover;"></div>
+        <div class="project-description">
+          <h2 class='align-center'>{{ item.project_title }}</h2>
+          <p>{{ item.project_description }}</p>
         </div>
+      </div>
+      <div class="modal-footer">
+        <ul class="client-details align-left">
+          <li>Client's name:
+            <strong>
+              <a class='client-link' href="{{ item.project_link }}" target='_blank' rel='noopener'>{{ item.project_client }}</a>
+            </strong>
+          </li>
+          <li>When:
+            <strong class='project-published-date'>
+              {{ item.project_date }}
+            </strong>
+          </li>
+          <li>Type of work:
+            {% for categ in item.project_work %}
+              <strong class='project-label'>
+                {{ categ }}
+                &nbsp;
+              </strong>
+            {% endfor %}
+          </li>
+        </ul>
+        <button type="button" class="button" data-dismiss="modal">
+          <i class="fa fa-times"></i>
+          Close</button>
+      </div>
     </div>
+  </div>
 {% endfor %}
