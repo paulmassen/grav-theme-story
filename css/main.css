@@ -5451,7 +5451,7 @@ body.is-loading .items.onload-fade-in > * > .inner {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 3rem; }
+    margin-top: 0; }
   .modal-content .modal-footer {
     width: 80%; }
   .modal-content .image {
