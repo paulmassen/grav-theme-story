@@ -7,7 +7,7 @@ form:
       fields:
         content:
           fields:
-              header.bannerrimg:
+              header.banner_img:
                 type: filepicker
                 preview_images: true
                 label: Landing Image
