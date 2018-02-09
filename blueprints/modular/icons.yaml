@@ -12,7 +12,7 @@ form:
                 label: Icons
                 fields:
                   .icons:
-                    type: text
+                    type: iconpicker
                     label: Icons
                   .headline:
                     type: text

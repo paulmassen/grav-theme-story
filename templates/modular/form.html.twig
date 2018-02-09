@@ -2,7 +2,7 @@
 <section class="wrapper style1 align-center">
 	<div class="inner medium">
 		<h2>{{page.title}}</h2>
-		{{ content }}
+		  {{ content|raw }}
 			{% include "forms/form.html.twig" %}
 	</div>
 </section>

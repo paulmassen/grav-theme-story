@@ -11,7 +11,7 @@ form:
                 type: list
                 label: Portfolio
                 fields:
-                  .projectimg:
+                  .project_img:
                     type: filepicker
                     label: Project image
                     preview_images: true
