@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	{% do assets.addCss('theme://css/main.css') %}
-	{{ assets.css() }}
+	{{ assets.css()|raw }}
 </head>
 <body>
 	<!-- Wrapper -->
@@ -33,7 +33,7 @@
 	{% do assets.addJs('theme://js/skel.min.js', 117) %}
 	{% do assets.addJs('theme://js/util.js', 116) %}
 	{% do assets.addJs('theme://js/main.js', 115) %}
-	{{ assets.js() }}
+	{{ assets.js()|raw }}
 
 </body>
 </html>
